@@ -73,9 +73,12 @@ class Z
 {
     public void Zhandler(int a, int b)
     {
+        if (b == 0) Console.WriteLine("Нельзя");
+        else {
         int c = a/b;
         Console.WriteLine("Деление = ");
         Console.WriteLine(c);
+        }
     }
 }
 class EventDemo5
