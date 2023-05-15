@@ -20,8 +20,12 @@ namespace ConsoleApplication21
                 if (i < r) array1.Add(array[i]);
                 if (i > r) array2.Add(array[i]);
             }
-            var firstar = array1.OrderBy(p => p);
-            var lastar = array2.OrderByDescending(p => p);
+            var firstar = from z in array1
+                          orderby z
+                          select z;
+            var lastar = from z in array1
+                          orderby z descending
+                          select z;
             foreach (int num in lastar)
             {
                 Console.WriteLine(num);
