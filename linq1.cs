@@ -10,14 +10,21 @@ namespace ConsoleApplication21
     {
         static void Main(string[] args)
         {
-            int[] array = { 1, 0, 0, -545, 3, -4, 12, 105, 0, 2, 12 };
+            //int[] array = { 1, 0, 0, -545, 3, -4, 12, 105, 0, 2, 12 };
+            List<int> array = new List<int> { 1, 0, 0, -545, 3, -4, 12, 105, 0, 2, 12 };
+            Console.WriteLine(array.Min());
             var array1 = from n in array
-                          select n;
-            Console.WriteLine(array1.Min());
-            var array2 = from n in array
-                         where n%2==0
+                         where n % 2 == 0
                          select n;
-            Console.WriteLine(array2.Min());
+            List<int> helper = new List<int>();
+            foreach (int num in array1)
+            {
+                helper.Add(num);
+            }
+            array = helper;
+            Console.WriteLine(array.Min());
             Console.ReadLine();
         }
+    }
+}
    
