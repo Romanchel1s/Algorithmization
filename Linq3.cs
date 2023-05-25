@@ -39,16 +39,16 @@ namespace ConsoleApplication6
             var DC = from p in Drivers
                      where p.FIO[0] == 'V'
                      select p;
-            foreach (Driver driver in Drivers)
+            foreach (Car car in Cars)
             {
-                var id = driver.CarId;
-                Console.WriteLine(driver.FIO);
-                var c = from p in Cars
-                        where p.Id == id
+                var id = car.Id;
+                Console.WriteLine(car.Name);
+                var c = from p in Drivers
+                        where p.CarId == id
                         select p;
-                foreach (Car car in c)
+                foreach (Driver driver in c)
                 {
-                    Console.WriteLine(car.Name);
+                    Console.WriteLine(driver.FIO);
                 }
             }
         }
